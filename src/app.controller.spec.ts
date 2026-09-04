@@ -15,8 +15,11 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('reports service health', () => {
+      expect(appController.getHello()).toEqual({
+        service: 'savings-calculator-api',
+        status: 'ok',
+      });
     });
   });
 });
